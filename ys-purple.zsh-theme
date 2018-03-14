@@ -38,7 +38,7 @@ ys_hg_prompt_info() {
 local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
 
 # Local color vars
-eval median_purple_bold='$terminfo[bold]$FG[098]'
+eval median_purple='$FG[098]'
 eval corn_flower_blue='$FG[069]'
 eval orchid_bold='$terminfo[bold]$FG[170]'
 
@@ -53,11 +53,11 @@ eval orchid_bold='$terminfo[bold]$FG[170]'
 # $
 PROMPT="
 %{$terminfo[bold]$fg[blue]%}>%{$reset_color%} \
-%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},$median_purple_bold%n%{$reset_color%}) \
+%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},$orchid_bold%n%{$reset_color%}) \
 %{$fg[white]%}@ \
-$corn_flower_blue%m \
+$median_purple%m \
 %{$fg[white]%}in \
-$orchid_bold%~%{$reset_color%}\
+$corn_flower_blue%~%{$reset_color%}\
 ${hg_info}\
 ${git_info}\
  \
