@@ -1,0 +1,1 @@
+This repository contains forked themes from the original [[https://github.com/robbyrussell/oh-my-zsh/tree/master/themes][oh-my-zsh]] project.
