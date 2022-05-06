@@ -6,7 +6,7 @@
 # Enjoy!
 
 # VCS
-YS_VCS_PROMPT_PREFIX1=" %{$fg[white]%}on%{$reset_color%} "
+YS_VCS_PROMPT_PREFIX1=" %{$reset_color%}on%{$reset_color%} "
 YS_VCS_PROMPT_PREFIX2=":%{$fg[cyan]%}"
 YS_VCS_PROMPT_SUFFIX="%{$reset_color%}"
 YS_VCS_PROMPT_DIRTY=" %{$fg[red]%}x"
@@ -38,7 +38,7 @@ ys_hg_prompt_info() {
 local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
 
 # Local color vars
-eval median_purple='$FG[098]'
+eval median_purple='$terminfo[bold]$FG[098]'
 eval corn_flower_blue='$FG[069]'
 eval orchid_bold='$terminfo[bold]$FG[170]'
 
@@ -54,12 +54,10 @@ eval orchid_bold='$terminfo[bold]$FG[170]'
 PROMPT="
 %{$terminfo[bold]$fg[blue]%}>%{$reset_color%} \
 %(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},$orchid_bold%n%{$reset_color%}) \
-%{$fg[white]%}@ \
-$median_purple%m \
-%{$fg[white]%}in \
+@ $median_purple%m%{$reset_color%} in \
 $corn_flower_blue%~%{$reset_color%}\
 ${hg_info}\
 ${git_info}\
  \
-%{$fg[white]%}[%*] $exit_code
+%{$reset_color%}[%*] $exit_code
 %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
